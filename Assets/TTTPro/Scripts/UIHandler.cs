@@ -8,7 +8,8 @@ public class UIHandler : MonoBehaviour {
     public GameObject menuUI;
     public GameObject loadng;
 	public GameObject requestPanel;
-    public GameObject tableInfo;
+	public GameObject tableInfo;
+    public GameObject hud;
     public Text loginTxt;
     public string requestID;
 	// Use this for initialization
