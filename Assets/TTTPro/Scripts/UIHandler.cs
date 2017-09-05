@@ -7,7 +7,8 @@ public class UIHandler : MonoBehaviour {
     public GameObject gamePlayUI;
     public GameObject menuUI;
     public GameObject loadng;
-    public GameObject requestPanel;
+	public GameObject requestPanel;
+    public GameObject tableInfo;
     public Text loginTxt;
     public string requestID;
 	// Use this for initialization
@@ -44,6 +45,20 @@ public class UIHandler : MonoBehaviour {
     {
         ConnectionManager.Instance.OnSendRequest(requestID);
     }
+
+	public void ShowTableInfo()
+	{
+		tableInfo.SetActive (true);
+		loadng.SetActive(false);
+		menuUI.SetActive(false);
+	}
+
+	public void OnCancelTableInfo()
+	{
+		tableInfo.SetActive (false);
+		loadng.SetActive(false);
+		menuUI.SetActive(true);
+	}
 
     public void AcceptChallange(bool isAcc)
     {

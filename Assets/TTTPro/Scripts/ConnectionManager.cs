@@ -147,7 +147,8 @@ using System.Collections.Generic;
              signalRConnection[HUB_NAME].Call("SendRequest",usersID);
             UIHandler.instance.gamePlayUI.SetActive(true);
             UIHandler.instance.menuUI.SetActive(false);
-            UIHandler.instance.loadng.SetActive(false);
+			UIHandler.instance.loadng.SetActive(false);
+			UIHandler.instance.tableInfo.SetActive(false);
 //			ConnectionStatus.instance.startPlayBtn.interactable = false;
         }
 
