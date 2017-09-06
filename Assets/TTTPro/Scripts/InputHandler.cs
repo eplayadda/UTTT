@@ -151,9 +151,10 @@ public class InputHandler : NetworkBehaviour  {
     {
         if (GameManager.instance.currGameMode == GameManager.eGameMode.onlineMultiPlayer)
         {
-            ConnectionManager.Instance.OnInPutDone(0,2);
-            UnetOnInputTracker_Closed();
-//            if (GameManager.instance.currTurn.ToString() == TTTPlayerManager.instace.curPlayer.ToString())
+			if (GameManager.instance.currTurn.ToString () == TTTPlayerManager.instace.curPlayer.ToString ()) {
+				ConnectionManager.Instance.OnInPutDone(0,2);
+				UnetOnInputTracker_Closed();
+			}
 //                myNetworkPlayer.OnInputTracker_Closed();
         }
         else if (GameManager.instance.currGameMode == GameManager.eGameMode.offlineMultiplayer)
@@ -168,7 +169,10 @@ public class InputHandler : NetworkBehaviour  {
 
     public void UnetOnInputTracker_Closed()
     {
-        LeanTween.scale(inputTracker, new Vector2(.1f,.1f), .2f).setOnComplete(InputTrackerCancel);
+		if (GameManager.instance.currTurn.ToString () == TTTPlayerManager.instace.curPlayer.ToString ()) {
+			
+			LeanTween.scale (inputTracker, new Vector2 (.1f, .1f), .2f).setOnComplete (InputTrackerCancel);
+		}
     }
 
     public void CheckGameOver()

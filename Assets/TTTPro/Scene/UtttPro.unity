@@ -1233,7 +1233,7 @@ Prefab:
     - target: {fileID: 114511829278678962, guid: 1259e38726c1c64498480ef152bb7054,
         type: 2}
       propertyPath: friedID
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1259e38726c1c64498480ef152bb7054, type: 2}
@@ -1611,6 +1611,16 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0.9374932
       objectReference: {fileID: 0}
+    - target: {fileID: 114635186964709640, guid: 20a80342008590840857b55c60411ca6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 706247240}
+    - target: {fileID: 114635186964709640, guid: 20a80342008590840857b55c60411ca6,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnInputTracker_Closed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20a80342008590840857b55c60411ca6, type: 2}
   m_IsPrefabParent: 0
@@ -1709,6 +1719,18 @@ Prefab:
       propertyPath: inputTrackerBtn.Array.data[8]
       value: 
       objectReference: {fileID: 2106758511}
+    - target: {fileID: 114682402302438672, guid: 534322890460f9a4ea40ff7fdca5f9e1,
+        type: 2}
+      propertyPath: marker.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 59292a52168c4564a955476dff9f3b85,
+        type: 3}
+    - target: {fileID: 114682402302438672, guid: 534322890460f9a4ea40ff7fdca5f9e1,
+        type: 2}
+      propertyPath: marker.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: d3639fb50f8a8454a81fff314abfd307,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 534322890460f9a4ea40ff7fdca5f9e1, type: 2}
   m_IsPrefabParent: 0

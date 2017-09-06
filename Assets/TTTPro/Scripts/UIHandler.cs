@@ -71,7 +71,11 @@ public class UIHandler : MonoBehaviour {
         {
             UIHandler.instance.gamePlayUI.SetActive(true);
             UIHandler.instance.menuUI.SetActive(false);
-            UIHandler.instance.loadng.SetActive(false);
+			UIHandler.instance.loadng.SetActive(false);
+			UIHandler.instance.hud.SetActive(true);
+			frndPic.SetActive (true);
+			startGamePlay.transform.parent.gameObject.SetActive (false);
+			addFriendInGamePlay.SetActive (false);
             TTTPlayerManager.instace.curPlayer = TTTPlayerManager.ePlayer.two;
             requestPanel.SetActive(false);
             GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
