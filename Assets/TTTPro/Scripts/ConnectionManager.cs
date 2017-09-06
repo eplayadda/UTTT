@@ -27,8 +27,8 @@ using System.Collections.Generic;
         string INPUTRECIVEC = "OnInputRecived";
 //       string baseUrl = "http://52.33.40.224/SignalRDemo\";// "http://localhost:1921/SignalRDemo";// "http://52.33.40.224/SignalRDemo";//"http://localhost:1921/SignalRDemo";
      string baseUrl = "http://52.33.40.224/SignalRDemo";
+		public string myID = "1";
         public string friedID ="2";
-        public string myID = "1";
         public enum SignalRConectionStatus
         {
             None = 0,
@@ -174,7 +174,7 @@ using System.Collections.Generic;
         public void ChallengeAccepted(Hub hub, MethodCallMessage msg)
         {
            Debug.Log("Accepted");
-              GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
+		UIHandler.instance.OpponentAcptedChallage ();
         }
          List <string> inputData = new List<string>();
         public void OnInPutDone(int a,int type)

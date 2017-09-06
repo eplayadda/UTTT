@@ -40,6 +40,7 @@ public class InputHandler : NetworkBehaviour  {
     }
     public void GridSelected(int pGrid)
     {
+		Debug.Log ("input");
         if (GameManager.instance.currGameMode == GameManager.eGameMode.onlineMultiPlayer)
         {
 			if (GameManager.instance.currTurn.ToString () == TTTPlayerManager.instace.curPlayer.ToString ()) {

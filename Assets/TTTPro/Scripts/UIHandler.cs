@@ -12,6 +12,10 @@ public class UIHandler : MonoBehaviour {
     public GameObject hud;
     public Text loginTxt;
     public string requestID;
+
+	public Button startGamePlay;
+	public GameObject addFriendInGamePlay;
+	public GameObject frndPic;
 	// Use this for initialization
 	void Awake () {
         if (instance == null)
@@ -74,4 +78,17 @@ public class UIHandler : MonoBehaviour {
             ConnectionManager.Instance.IacceptChallage();
         }
     }
+
+	public void OpponentAcptedChallage()
+	{
+		startGamePlay.interactable = true;
+		frndPic.SetActive (true);
+		addFriendInGamePlay.SetActive (false);
+	}
+	public void StartGamePlay ()
+	{
+		startGamePlay.transform.parent.gameObject.SetActive (false);
+		GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
+		
+	}
 }
