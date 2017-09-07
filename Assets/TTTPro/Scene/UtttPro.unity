@@ -147,6 +147,58 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1965808098}
   m_Script: {fileID: 11500000, guid: 3c9402098c03c6441ae781d6b7854b28, type: 3}
+--- !u!1001 &616928729
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545715529576054, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114184876080473772, guid: 45812921f997e5d479e1ebccd183612b,
+        type: 2}
+      propertyPath: FriendPrefab
+      value: 
+      objectReference: {fileID: 1531973262}
+    - target: {fileID: 114184876080473772, guid: 45812921f997e5d479e1ebccd183612b,
+        type: 2}
+      propertyPath: parentObject
+      value: 
+      objectReference: {fileID: 1819976295}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 45812921f997e5d479e1ebccd183612b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &624185642
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,61 +636,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1259e38726c1c64498480ef152bb7054, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1848789911
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1848789914}
-  - component: {fileID: 1848789913}
-  - component: {fileID: 1848789912}
-  m_Layer: 0
-  m_Name: SocialManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1848789912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1848789911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d768146374106d4ab8fecc8bec76c5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  facebookController: {fileID: 1848789913}
---- !u!114 &1848789913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1848789911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feb0814c9f61e2040a66a9ed567f74c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FriendPrefab: {fileID: 1531973262}
-  parentObject: {fileID: 1819976295}
---- !u!4 &1848789914
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1848789911}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1965808098
 Prefab:
   m_ObjectHideFlags: 0
