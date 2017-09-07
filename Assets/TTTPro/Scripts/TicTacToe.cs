@@ -76,13 +76,15 @@ public class TicTacToe : MonoBehaviour {
         currTTTStatus =(eTTTStatus) winPlayer;
         if (winPlayer != 0)
         {
-            SetMarkerImage(winPlayer);
-			if (ticTacNo != -1) {
+			if (ticTacNo >= 0) {
+				SetMarkerImage(winPlayer);
 				parentTTT.gridData [ticTacNo] = winPlayer;
 				parentTTT.CheckWinLogic ();
 			} else {
 				GameManager.instance.currState = GameManager.eGameState.gameOver;
 				UIHandler.instance.OnGameOver (winPlayer);
+				Debug.Log ("Game Over");
+				Debug.Log (winPlayer);
 			}
         }
     }

@@ -113,17 +113,28 @@ public class UIHandler : MonoBehaviour
 
 	public void OnGameOver (int isWin)
 	{
-		if (isWin == 1) {
-			gameOverPnl.SetActive (true);
-			gameOverTxt.text = "You Win";
-		} else if (isWin == 2) {
-			gameOverPnl.SetActive (true);
-			gameOverTxt.text = "You Lose";
+		gameOverPnl.SetActive (true);
+		if (TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.one) {
+			if (isWin == 1) {
+				gameOverTxt.text = "You Win";
+			} else if (isWin == 2) {
+				gameOverTxt.text = "You Lose";
 
-		} else if (isWin == 3) {
-			gameOverPnl.SetActive (true);
-			gameOverTxt.text = "Draw";
+			} else if (isWin == 3) {
+				gameOverTxt.text = "Draw";
 
+			}
+		}
+		else if(TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.two){
+			if (isWin == 1) {
+				gameOverTxt.text = "You Los";
+			} else if (isWin == 2) {
+				gameOverTxt.text = "You win";
+
+			} else if (isWin == 3) {
+				gameOverTxt.text = "Draw";
+
+			}
 		}
 	}
 

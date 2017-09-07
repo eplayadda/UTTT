@@ -138,7 +138,7 @@ using System.Collections.Generic;
             signalRConnection [HUB_NAME].On (INPUTRECIVEC, OnInputRecived);
         }
     List <string> usersID = new List<string>();
-        public void OnSendRequest(string i)
+        public void OnSendRequest()
         {
             usersID.Clear();
             usersID.Add(myID);
