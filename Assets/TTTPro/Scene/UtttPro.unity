@@ -1233,6 +1233,11 @@ Prefab:
     - target: {fileID: 114511829278678962, guid: 1259e38726c1c64498480ef152bb7054,
         type: 2}
       propertyPath: friedID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114511829278678962, guid: 1259e38726c1c64498480ef152bb7054,
+        type: 2}
+      propertyPath: myID
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -78,7 +78,8 @@ public class UIHandler : MonoBehaviour {
 			addFriendInGamePlay.SetActive (false);
             TTTPlayerManager.instace.curPlayer = TTTPlayerManager.ePlayer.two;
             requestPanel.SetActive(false);
-            GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
+			GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
+			GameManager.instance.currState = GameManager.eGameState.play;
             ConnectionManager.Instance.IacceptChallage();
         }
     }
@@ -93,6 +94,11 @@ public class UIHandler : MonoBehaviour {
 	{
 		startGamePlay.transform.parent.gameObject.SetActive (false);
 		GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
-		
+		GameManager.instance.currState = GameManager.eGameState.play;
+
+	}
+	public void OnGameOver(int isWin)
+	{
+
 	}
 }
