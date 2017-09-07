@@ -11,6 +11,8 @@ public class UIHandler : MonoBehaviour {
 	public GameObject tableInfo;
     public GameObject hud;
     public Text loginTxt;
+	public Text gameOverTxt;
+	public GameObject gameOverPnl;
     public string requestID;
 
 	public Button startGamePlay;
@@ -99,6 +101,17 @@ public class UIHandler : MonoBehaviour {
 	}
 	public void OnGameOver(int isWin)
 	{
+		if (isWin == 1) {
+			gameOverPnl.SetActive (true);
+			gameOverTxt.text = "You Win";
+		} else if (isWin == 2) {
+			gameOverPnl.SetActive (true);
+			gameOverTxt.text = "You Lose";
 
+		} else if (isWin == 3) {
+			gameOverPnl.SetActive (true);
+			gameOverTxt.text = "Draw";
+
+		}
 	}
 }
