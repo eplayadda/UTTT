@@ -40,6 +40,8 @@ public class InputHandler : NetworkBehaviour  {
     }
     public void GridSelected(int pGrid)
     {
+		if (GameManager.instance.currState != GameManager.eGameState.play)
+			return;
 		Debug.Log ("input");
         if (GameManager.instance.currGameMode == GameManager.eGameMode.onlineMultiPlayer)
         {
@@ -72,6 +74,8 @@ public class InputHandler : NetworkBehaviour  {
 
     public void OnInputTaken(int pGrid)
     {
+		if (GameManager.instance.currState != GameManager.eGameState.play)
+			return;
         if (GameManager.instance.currGameMode == GameManager.eGameMode.onlineMultiPlayer)
         {
             if (GameManager.instance.currTurn.ToString() == TTTPlayerManager.instace.curPlayer.ToString())

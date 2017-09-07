@@ -18,6 +18,14 @@ public class GameManager : MonoBehaviour {
         one,
         two
     }
+	public enum eGameState
+	{
+		none,
+		play,
+		pause,
+		gameOver
+	}
+	public eGameState currState;
     public eGameMode currGameMode;
     public eTurn currTurn;
     public static GameManager instance;

@@ -8,6 +8,7 @@ public class TicTacToe : MonoBehaviour {
     public List<int> gridData = new List<int>();
     public GameObject marker;
     public TicTacToe parentTTT;
+	public int ticTacNo;
     public enum eTTTStatus
     {
         none,
@@ -76,11 +77,14 @@ public class TicTacToe : MonoBehaviour {
         if (winPlayer != 0)
         {
             SetMarkerImage(winPlayer);
-//            parentTTT.SetInputData(winPlayer);
-
+			if (ticTacNo != -1) {
+				parentTTT.gridData [ticTacNo] = winPlayer;
+				parentTTT.CheckWinLogic ();
+			} else {
+				GameManager.instance.currState = GameManager.eGameState.gameOver;
+				UIHandler.instance.OnGameOver (winPlayer);
+			}
         }
-//        if(parentTTT != null)
-//        parentTTT.CheckWinLogic();
     }
 
     void SetMarkerImage(int index)

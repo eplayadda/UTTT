@@ -11,10 +11,16 @@ public class UIHandler : MonoBehaviour
 	public GameObject loadng;
 	public GameObject requestPanel;
 	public GameObject tableInfo;
+
 	public GameObject hud;
 	public GameObject FriendsList;
 	public Text loginTxt;
 	public string requestID;
+
+	public Text gameOverTxt;
+	public GameObject gameOverPnl;
+    
+
 
 	public Button startGamePlay;
 	public GameObject addFriendInGamePlay;
@@ -80,12 +86,15 @@ public class UIHandler : MonoBehaviour
 			frndPic.SetActive (true);
 			startGamePlay.transform.parent.gameObject.SetActive (false);
 			addFriendInGamePlay.SetActive (false);
+	
 			TTTPlayerManager.instace.curPlayer = TTTPlayerManager.ePlayer.two;
 			requestPanel.SetActive (false);
 			GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
+			GameManager.instance.currState = GameManager.eGameState.play;
 			ConnectionManager.Instance.IacceptChallage ();
 		}
 	}
+
 
 	public void OpponentAcptedChallage ()
 	{
@@ -98,7 +107,24 @@ public class UIHandler : MonoBehaviour
 	{
 		startGamePlay.transform.parent.gameObject.SetActive (false);
 		GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
-		
+		GameManager.instance.currState = GameManager.eGameState.play;
+
+	}
+
+	public void OnGameOver (int isWin)
+	{
+		if (isWin == 1) {
+			gameOverPnl.SetActive (true);
+			gameOverTxt.text = "You Win";
+		} else if (isWin == 2) {
+			gameOverPnl.SetActive (true);
+			gameOverTxt.text = "You Lose";
+
+		} else if (isWin == 3) {
+			gameOverPnl.SetActive (true);
+			gameOverTxt.text = "Draw";
+
+		}
 	}
 
 	public void DeactiveFriendsList ()
