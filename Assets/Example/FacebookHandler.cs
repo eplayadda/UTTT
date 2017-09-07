@@ -4,11 +4,11 @@ using UnityEngine;
 using Facebook.Unity;
 using UnityEngine.UI;
 
-public class SSTest : MonoBehaviour
+public class FacebookHandler : MonoBehaviour
 {
 	public GameObject FriendPrefab;
 	public Transform parentObject;
-	public GameObject panel;
+	//public GameObject panel;
 	// Use this for initialization
 	void Start ()
 	{
@@ -58,6 +58,7 @@ public class SSTest : MonoBehaviour
 			var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
 			// Print current access token's User ID
 			Debug.Log (aToken.UserId);
+			GetFriends ();
 			// Print current access token's granted permissions
 			foreach (string perm in aToken.Permissions) {
 				Debug.Log (perm);
@@ -69,13 +70,16 @@ public class SSTest : MonoBehaviour
 
 	public void GetFriends ()
 	{
-		FB.API ("me?fields=id,name,friends.limit(10){first_name}", HttpMethod.GET, this.GetFreindCallback);
+		if (FB.IsLoggedIn) {
+			FB.API ("me?fields=id,name,friends.limit(20){first_name,picture}", HttpMethod.GET, this.GetFreindCallback);
+		} else {
+			Login ();
+		}
 
 	}
 
 	void GetFreindCallback (IResult result)
 	{
-		panel.SetActive (false);
 		string resposne = result.RawResult;
 		Debug.Log (resposne);
 		var data = (Dictionary<string, object>)result.ResultDictionary;
@@ -84,13 +88,29 @@ public class SSTest : MonoBehaviour
 		//Debug.Log (tagData ["first_name"].ToString ());
 		for (int i = 0; i < resultData.Count; i++) {
 			var resultValue = resultData [i] as Dictionary<string, object>;
+			var picture = resultValue ["picture"] as Dictionary<string ,object>;
+			var picData = picture ["data"] as Dictionary<string,object>;
+			string url = picData ["url"].ToString ();
+			Debug.Log ("url : " + url);
 			GameObject g = Instantiate (FriendPrefab) as GameObject;
 			g.SetActive (true);
 			g.transform.SetParent (parentObject);
 			g.transform.localScale = Vector3.one;
 			g.transform.position = Vector3.zero;
-			g.GetComponent<Property> ().firendsName.text = resultValue ["first_name"].ToString ();
+			g.GetComponent<FriendsDetails> ().Name.text = resultValue ["first_name"].ToString ();
 			Debug.Log (resultValue ["first_name"].ToString () + "  , " + resultValue ["id"].ToString ());
+			string id = resultValue ["id"].ToString ();
+			if (!string.IsNullOrEmpty (id)) {
+				FB.API ("https" + "://graph.facebook.com/" + id + "/picture?width=128&height=128", HttpMethod.GET, delegate(IGraphResult avatarResult) {
+					if (avatarResult.Error != null) {
+						Debug.Log (avatarResult.Error);
+					} else {
+
+						g.GetComponent<FriendsDetails> ().ProfilePic.sprite = Sprite.Create (avatarResult.Texture, new Rect (0, 0, 128, 128), new Vector2 (0.5f, 0.5f));
+						;
+					}
+				});
+			}
 		}
 	}
 
