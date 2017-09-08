@@ -55,8 +55,10 @@ public class FacebookHandler : MonoBehaviour
 	{
 		if (FB.IsLoggedIn) {
 			// AccessToken class will have session details
+			Debug.Log (result.RawResult);
 			var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
 			// Print current access token's User ID
+			ConnectionManager.Instance.myID = aToken.UserId;
 			Debug.Log (aToken.UserId);
 			GetFriends ();
 			// Print current access token's granted permissions
@@ -98,8 +100,10 @@ public class FacebookHandler : MonoBehaviour
 			g.transform.localScale = Vector3.one;
 			g.transform.position = Vector3.zero;
 			g.GetComponent<FriendsDetails> ().Name.text = resultValue ["first_name"].ToString ();
+			Button btn = g.GetComponentInChildren<Button> ();
 			Debug.Log (resultValue ["first_name"].ToString () + "  , " + resultValue ["id"].ToString ());
 			string id = resultValue ["id"].ToString ();
+			AddListener (btn, id);
 			if (!string.IsNullOrEmpty (id)) {
 				FB.API ("https" + "://graph.facebook.com/" + id + "/picture?width=128&height=128", HttpMethod.GET, delegate(IGraphResult avatarResult) {
 					if (avatarResult.Error != null) {
@@ -114,6 +118,10 @@ public class FacebookHandler : MonoBehaviour
 		}
 	}
 
+	private void AddListener (Button btn, string fbID)
+	{
+		btn.onClick.AddListener (() => SetFriendsId (fbID));
+	}
 	//	private void OnGUI ()
 	//	{
 	//		if (GUI.Button (new Rect (100, 100, 100, 50), "Login")) {
@@ -128,6 +136,14 @@ public class FacebookHandler : MonoBehaviour
 	//			AppRequest ();
 	//		}
 	//	}
+
+	public void SetFriendsId (string id)
+	{
+		ConnectionManager.Instance.friedID = id;
+		Debug.Log ("SetFriendsId : " + id);
+		UIHandler.instance.ShowTableInfo ();
+		UIHandler.instance.DeactiveFriendsList ();
+	}
 
 	public void AppRequest ()
 	{

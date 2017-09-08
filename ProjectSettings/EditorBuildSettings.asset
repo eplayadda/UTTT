@@ -8,6 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Example/test.unity
     guid: 29c96c57533cfd248b15529bd8b5a730
-  - enabled: 1
+  - enabled: 0
     path: E:/ePLayAdda/New folder (2)/UTTT/Assets/TTTPro/Scene/UtttPro.unity
     guid: 00000000000000000000000000000000

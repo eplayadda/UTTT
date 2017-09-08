@@ -59,7 +59,7 @@ public class UIHandler : MonoBehaviour
 
 	public void CreateTable ()
 	{
-		ConnectionManager.Instance.OnSendRequest (requestID);
+		//ConnectionManager.Instance.OnSendRequest (requestID);
 	}
 
 	public void ShowTableInfo ()
@@ -124,8 +124,7 @@ public class UIHandler : MonoBehaviour
 				gameOverTxt.text = "Draw";
 
 			}
-		}
-		else if(TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.two){
+		} else if (TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.two) {
 			if (isWin == 1) {
 				gameOverTxt.text = "You Los";
 			} else if (isWin == 2) {
