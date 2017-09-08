@@ -138,7 +138,7 @@ using System.Collections.Generic;
             signalRConnection [HUB_NAME].On (INPUTRECIVEC, OnInputRecived);
         }
     List <string> usersID = new List<string>();
-        public void OnSendRequest()
+        public void OnSendRequest(string i)
         {
             usersID.Clear();
             usersID.Add(myID);
@@ -179,6 +179,8 @@ using System.Collections.Generic;
          List <string> inputData = new List<string>();
         public void OnInPutDone(int a,int type)
         {
+			UIHandler.instance.friendClock.PlayClock ();
+			UIHandler.instance.myClock.ResetClock ();
             inputData.Clear();
             inputData.Add(friedID);
             inputData.Add(a+"");
@@ -190,7 +192,9 @@ using System.Collections.Generic;
         {
             var str = msg.Arguments [0] as object[];
             Debug.Log(str[2].ToString());
-     
+			UIHandler.instance.myClock.PlayClock ();
+			UIHandler.instance.friendClock.ResetClock ();
+     		
             if (str[2].ToString() == "0")
             {
                 int a = Convert.ToInt32(str[1]);

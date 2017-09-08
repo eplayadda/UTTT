@@ -20,6 +20,8 @@ public class UIHandler : MonoBehaviour
 	public Text gameOverTxt;
 	public GameObject gameOverPnl;
     
+	public Clock myClock;
+	public Clock friendClock;
 
 
 	public Button startGamePlay;
