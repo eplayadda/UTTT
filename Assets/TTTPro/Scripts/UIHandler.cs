@@ -61,7 +61,7 @@ public class UIHandler : MonoBehaviour
 
 	public void CreateTable ()
 	{
-		//ConnectionManager.Instance.OnSendRequest (requestID);
+		ConnectionManager.Instance.OnSendRequest (requestID);
 	}
 
 	public void ShowTableInfo ()
