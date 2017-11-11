@@ -53,7 +53,6 @@ public class Clock : MonoBehaviour
 		t = 0f;
 		fillValue = 1f;
 		nidle.fillAmount = fillValue;
-
 	}
 
 
@@ -65,6 +64,9 @@ public class Clock : MonoBehaviour
 				fillValue = Mathf.Lerp (minimum, maximum, t);
 				t += speed * Time.deltaTime;
 				nidle.fillAmount = fillValue;
+//				Debug.Log ("Time :: "+t);
+				if(t >= 1 )
+					OnTimeUp();
 			}
 			break;
 		case eClockState.pause:
@@ -72,6 +74,16 @@ public class Clock : MonoBehaviour
 
 			}
 			break;
+		}
+	}
+
+	void OnTimeUp()
+	{
+		if (TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.one && GameManager.instance.currTurn == GameManager.eTurn.one) {
+			Debug.Log ("Time Up 1");
+		} else if (TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.two && GameManager.instance.currTurn == GameManager.eTurn.two) {
+			Debug.Log ("Time Up 2");
+
 		}
 	}
 }

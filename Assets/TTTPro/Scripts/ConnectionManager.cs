@@ -26,7 +26,7 @@ using System.Collections.Generic;
         string CHALLENGEACCEPTED = "ChallengeAccepted";
         string INPUTRECIVEC = "OnInputRecived";
 //       string baseUrl = "http://52.33.40.224/SignalRDemo\";// "http://localhost:1921/SignalRDemo";// "http://52.33.40.224/SignalRDemo";//"http://localhost:1921/SignalRDemo";
-     string baseUrl = "http://52.33.40.224/SignalRDemo";
+	string baseUrl ="http://52.11.67.198/SignalRDemo";// "http://52.33.40.224/SignalRDemo";
 		public string myID = "1";
         public string friedID ="2";
         public enum SignalRConectionStatus
@@ -41,6 +41,7 @@ using System.Collections.Generic;
         public Coroutine signalRCoroutine;
         void Awake()
         {
+		PlayerPrefs.DeleteAll ();
             if (Instance == null)
             {
                 Instance = this;
@@ -137,14 +138,14 @@ using System.Collections.Generic;
             signalRConnection [HUB_NAME].On (CHALLENGEACCEPTED, ChallengeAccepted);
             signalRConnection [HUB_NAME].On (INPUTRECIVEC, OnInputRecived);
         }
-    List <string> usersID = new List<string>();
+  	    List <string> usersID = new List<string>();
         public void OnSendRequest(string i)
         {
             usersID.Clear();
             usersID.Add(myID);
             usersID.Add(friedID);
 			TTTPlayerManager.instace.curPlayer = TTTPlayerManager.ePlayer.one;
-             signalRConnection[HUB_NAME].Call("SendRequest",usersID);
+            signalRConnection[HUB_NAME].Call("SendRequest",usersID);
 			UIHandler.instance.gamePlayUI.SetActive(true);
             UIHandler.instance.hud.SetActive(true);
             UIHandler.instance.menuUI.SetActive(false);
@@ -152,6 +153,7 @@ using System.Collections.Generic;
 			UIHandler.instance.tableInfo.SetActive(false);
 //			ConnectionStatus.instance.startPlayBtn.interactable = false;
         }
+
 
         public void OnReceiveMatchDetails(Hub hub, MethodCallMessage msg)
         {
@@ -174,26 +176,34 @@ using System.Collections.Generic;
         public void ChallengeAccepted(Hub hub, MethodCallMessage msg)
         {
            Debug.Log("Accepted");
-		UIHandler.instance.OpponentAcptedChallage ();
+	       UIHandler.instance.OpponentAcptedChallage ();
         }
          List <string> inputData = new List<string>();
         public void OnInPutDone(int a,int type)
         {
-			UIHandler.instance.friendClock.PlayClock ();
-			UIHandler.instance.myClock.ResetClock ();
+			if (type == 1) {
+				UIHandler.instance.friendClock.PlayClock ();
+				UIHandler.instance.myClock.ResetClock ();
+			}
             inputData.Clear();
             inputData.Add(friedID);
             inputData.Add(a+"");
             inputData.Add(type+"");
             signalRConnection[HUB_NAME].Call("InPutTaken",inputData);
         }
-
+		public void OnServerGameStart()
+		{
+			inputData.Clear();
+			inputData.Add(friedID);
+			inputData.Add("");
+			inputData.Add(3+"");
+			signalRConnection[HUB_NAME].Call("InPutTaken",inputData);
+		}
         public void OnInputRecived(Hub hub, MethodCallMessage msg)
         {
             var str = msg.Arguments [0] as object[];
             Debug.Log(str[2].ToString());
-			UIHandler.instance.myClock.PlayClock ();
-			UIHandler.instance.friendClock.ResetClock ();
+
      		
             if (str[2].ToString() == "0")
             {
@@ -202,6 +212,8 @@ using System.Collections.Generic;
             }
             else if(str[2].ToString() == "1")
             {
+				UIHandler.instance.myClock.PlayClock ();
+				UIHandler.instance.friendClock.ResetClock ();
                  int a = Convert.ToInt32(str[1]);
                   InputHandler.instance.UnetOnInputTaken(a);
             }
@@ -209,6 +221,12 @@ using System.Collections.Generic;
             {
                 InputHandler.instance.UnetOnInputTracker_Closed();
             }
+			else if(str[2].ToString() == "3")
+			{
+				// only for server player game started
+				InputHandler.instance.OnGameStartOnServer();
+				Debug.Log ("3333");
+			}
         }
         public void Ack(Hub hub, MethodCallMessage msg)
         {

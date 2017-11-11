@@ -47,6 +47,17 @@ public class UIHandler : MonoBehaviour
 		GameManager.instance.GameStart ();
 	}
 
+	public void PlayerIDSelecte(int a)
+	{
+		if (a == 1) {
+			ConnectionManager.Instance.myID = "1";
+			ConnectionManager.Instance.friedID = "2";
+		} else {
+			ConnectionManager.Instance.myID = "2";
+			ConnectionManager.Instance.friedID = "1";
+		}
+	}
+
 	public void OnLoginClicked ()
 	{
 		loginTxt.text = "Loading....";
@@ -110,7 +121,9 @@ public class UIHandler : MonoBehaviour
 		startGamePlay.transform.parent.gameObject.SetActive (false);
 		GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
 		GameManager.instance.currState = GameManager.eGameState.play;
-
+		ConnectionManager.Instance.OnServerGameStart ();
+		UIHandler.instance.friendClock.ResetClock ();
+		UIHandler.instance.myClock.PlayClock ();
 	}
 
 	public void OnGameOver (int isWin)

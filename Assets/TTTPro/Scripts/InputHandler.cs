@@ -98,6 +98,7 @@ public class InputHandler : NetworkBehaviour  {
 
     public void UnetOnInputTaken(int pGrid)
     {
+		Debug.Log ("Input Recied");
         selectedTicTTTgrid = pGrid;
         tictaktoe[selectedGrid - 1].SetInputData(pGrid);
         LeanTween.scale(inputTracker, new Vector2(.1f,.1f), .2f).setOnComplete(InputTrackerClosed);
@@ -174,10 +175,15 @@ public class InputHandler : NetworkBehaviour  {
     public void UnetOnInputTracker_Closed()
     {
 		if (GameManager.instance.currTurn.ToString () == TTTPlayerManager.instace.curPlayer.ToString ()) {
-			
 			LeanTween.scale (inputTracker, new Vector2 (.1f, .1f), .2f).setOnComplete (InputTrackerCancel);
 		}
     }
+
+	public void OnGameStartOnServer()
+	{
+		UIHandler.instance.friendClock.PlayClock ();
+		UIHandler.instance.myClock.ResetClock ();
+	}
 
     public void CheckGameOver()
     {
