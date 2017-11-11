@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour {
 	void Awake () {
         if (instance == null)
             instance = this;
+		Screen.SetResolution (400,600,false);
 	}
     void Start()
     {
