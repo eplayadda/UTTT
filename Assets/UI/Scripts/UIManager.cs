@@ -41,6 +41,44 @@ public class UIManager : MonoBehaviour
 		
 	}
 
+	public void OnClickFrinds ()
+	{
+		uiController.ActiveUIObject (FriendsListPanel);
+	}
 
+	public void OnClickSetting ()
+	{
+		uiController.ActiveUIObject (SettingsPanel);
+	}
+
+	public void OnClickMode ()
+	{
+		uiController.ActiveUIObject (CreateGamePlayPanel);
+	}
+
+	public void OnClickCreateTable ()
+	{
+		uiController.ActiveUIObject (CreateTablePanel);
+	}
+
+	public void OnCloseFriendsList ()
+	{
+		uiController.DeactiveUIObject (FriendsListPanel);
+	}
+
+	public void OnCloseSettings ()
+	{
+		uiController.DeactiveUIObject (SettingsPanel);
+	}
+
+	public void OnCloseCreateGamePlayPanel ()
+	{
+		uiController.DeactiveUIObject (CreateGamePlayPanel);
+	}
+
+	public void OnCloseCreateTable ()
+	{
+		uiController.DeactiveUIObject (CreateTablePanel);
+	}
 
 }
