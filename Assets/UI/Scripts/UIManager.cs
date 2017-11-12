@@ -59,6 +59,23 @@ public class UIManager : MonoBehaviour
 	public void OnClickCreateTable ()
 	{
 		uiController.ActiveUIObject (CreateTablePanel);
+		uiController.DeactiveUIObject (CreateGamePlayPanel);
+	}
+
+	public void OnClickUserProfile ()
+	{
+		uiController.ActiveUIObject (UserProfile);
+	}
+
+	public void OnClickBuyCoin ()
+	{
+		uiController.ActiveUIObject (StorePanel);
+	}
+
+	public void OnClickInviteFriends ()
+	{
+		Debug.Log ("OnClickInviteFriends");
+		uiController.ActiveUIObject (InviableFriendsPanel);
 	}
 
 	public void OnCloseFriendsList ()
@@ -79,6 +96,21 @@ public class UIManager : MonoBehaviour
 	public void OnCloseCreateTable ()
 	{
 		uiController.DeactiveUIObject (CreateTablePanel);
+	}
+
+	public void OnCloseUserProfile ()
+	{
+		uiController.DeactiveUIObject (UserProfile);
+	}
+
+	public void OnCloseStore ()
+	{
+		uiController.DeactiveUIObject (StorePanel);
+	}
+
+	public void OnCloseInvitableFriends ()
+	{
+		uiController.DeactiveUIObject (InviableFriendsPanel);
 	}
 
 }
