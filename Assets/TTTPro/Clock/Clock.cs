@@ -65,8 +65,8 @@ public class Clock : MonoBehaviour
 				t += speed * Time.deltaTime;
 				nidle.fillAmount = fillValue;
 //				Debug.Log ("Time :: "+t);
-				if(t >= 1 )
-					OnTimeUp();
+				if (t >= 1)
+					StartCoroutine ("OnTimeUp");
 			}
 			break;
 		case eClockState.pause:
@@ -77,13 +77,30 @@ public class Clock : MonoBehaviour
 		}
 	}
 
-	void OnTimeUp()
+	IEnumerator OnTimeUp()
 	{
+		currentClockStart = eClockState.none;
 		if (TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.one && GameManager.instance.currTurn == GameManager.eTurn.one) {
+			int a = UtttAI.instance.GridSelecteByAI ();
+			Debug.Log ("a1"+a);
+			yield return new WaitForSeconds (1f);
+			InputHandler.instance.GridSelected (a);
+			a = UtttAI.instance.InputSelecteByAI (a);
+			Debug.Log ("a2"+a);
+			yield return new WaitForSeconds (1f);
+			InputHandler.instance.OnInputTaken (a);
+
 			Debug.Log ("Time Up 1");
 		} else if (TTTPlayerManager.instace.curPlayer == TTTPlayerManager.ePlayer.two && GameManager.instance.currTurn == GameManager.eTurn.two) {
 			Debug.Log ("Time Up 2");
-
+			int a = UtttAI.instance.GridSelecteByAI ();
+			Debug.Log ("a1"+a);
+			yield return new  WaitForSeconds (1f);
+			InputHandler.instance.GridSelected (a);
+			a = UtttAI.instance.InputSelecteByAI (a);
+			Debug.Log ("a1"+a);
+			yield return new WaitForSeconds (1f);
+			InputHandler.instance.OnInputTaken (a);
 		}
 	}
 }
