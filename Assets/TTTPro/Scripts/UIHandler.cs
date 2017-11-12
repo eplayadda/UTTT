@@ -152,6 +152,11 @@ public class UIHandler : MonoBehaviour
 		}
 	}
 
+	public void Replay()
+	{
+		Application.LoadLevel (0);
+	}
+
 	public void DeactiveFriendsList ()
 	{
 		FriendsList.SetActive (false);

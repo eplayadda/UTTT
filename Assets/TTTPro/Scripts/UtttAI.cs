@@ -5,6 +5,7 @@ using UnityEngine;
 public class UtttAI : MonoBehaviour 
 {
 	public static UtttAI instance;
+	public TicTacToe parentTTT;
 	InputHandler inputHandler;
 	void Awake()
 	{
@@ -26,7 +27,7 @@ public class UtttAI : MonoBehaviour
 		if (!isEmptyGrid) {
 			List <int> freeData = new List<int> ();
 		
-			for (int i = 0; i < inputHandler.inputTrackerTi.gridData.Count; i++) {
+			for (int i = 0; i < parentTTT.gridData.Count; i++) {
 				if (inputHandler.inputTrackerTi.gridData [i] == 0) {
 					freeData.Add (i+1);
 				}

@@ -80,10 +80,11 @@ public class TicTacToe : MonoBehaviour {
 				SetMarkerImage(winPlayer);
 				parentTTT.gridData [ticTacNo] = winPlayer;
 				parentTTT.CheckWinLogic ();
+				Debug.Log ("one gread ovr");
 			} else {
 				GameManager.instance.currState = GameManager.eGameState.gameOver;
 				UIHandler.instance.OnGameOver (winPlayer);
-				Debug.Log ("Game Over");
+				Debug.Log (transform.name+ "Game Over"+ticTacNo);
 				Debug.Log (winPlayer);
 			}
         }
