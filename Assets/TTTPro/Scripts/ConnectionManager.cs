@@ -146,7 +146,7 @@ using System.Collections.Generic;
             usersID.Add(friedID);
 			TTTPlayerManager.instace.curPlayer = TTTPlayerManager.ePlayer.one;
             signalRConnection[HUB_NAME].Call("SendRequest",usersID);
-			UIHandler.instance.gamePlayUI.SetActive(true);
+//			UIHandler.instance.gamePlayUI.SetActive(true);
             UIHandler.instance.hud.SetActive(true);
             UIHandler.instance.menuUI.SetActive(false);
 			UIHandler.instance.loadng.SetActive(false);
@@ -170,7 +170,7 @@ using System.Collections.Generic;
             usersID.Add(friedID);
             signalRConnection[HUB_NAME].Call("IacceptedChallenge",usersID);
             GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
-
+			Debug.Log ("1_");
 
         }
         public void ChallengeAccepted(Hub hub, MethodCallMessage msg)

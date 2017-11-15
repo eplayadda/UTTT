@@ -12,6 +12,8 @@ public class InputHandler : NetworkBehaviour  {
     public RectTransform inputTracker;
     public List<RectTransform> inputTrackerPos;
     public List<TicTacToe> tictaktoe = new List<TicTacToe>();
+	public List<GameObject> inputTrackerBtn = new List<GameObject>();
+
     Vector3 final = Vector3.one;
     public int selectedGrid;
     public int selectedTicTTTgrid;
@@ -181,6 +183,7 @@ public class InputHandler : NetworkBehaviour  {
 
 	public void OnGameStartOnServer()
 	{
+		Debug.Log ("gjvgef");
 		UIHandler.instance.friendClock.PlayClock ();
 		UIHandler.instance.myClock.ResetClock ();
 	}

@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: E:/ePLayAdda/New folder (2)/UTTT/Assets/TTTPro/Scene/UtttPro.unity
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/TTTPro/Scene/UtttProServer.unity
+    guid: b07fa6461ebea154bad7093b69855cc5
+  - enabled: 1
+    path: Assets/TTTPro/Scene/UtttProGamePlay.unity
+    guid: 00000000000000000000000000000000

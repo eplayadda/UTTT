@@ -30,10 +30,16 @@ public class GameManager : MonoBehaviour {
     public eTurn currTurn;
     public static GameManager instance;
     public Sprite[] marker;
-    public List<GameObject> inputTrackerBtn = new List<GameObject>();
 	void Awake () {
-        if (instance == null)
-            instance = this;
+		if (instance == null) {
+			instance = this;
+			DontDestroyOnLoad (this.gameObject);
+
+		} else {
+			DestroyImmediate(this.gameObject);
+			return;
+		}
+
 		Screen.SetResolution (400,600,false);
 	}
     void Start()

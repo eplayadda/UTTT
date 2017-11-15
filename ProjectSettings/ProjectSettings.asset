@@ -137,6 +137,7 @@ PlayerSettings:
   useHDRDisplay: 0
   applicationIdentifier:
     Android: com.eplayadda.mindssmash
+    Standalone: com.eplayadda.mindssmash
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16

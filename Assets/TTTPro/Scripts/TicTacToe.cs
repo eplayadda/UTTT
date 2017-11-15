@@ -158,11 +158,11 @@ public class TicTacToe : MonoBehaviour {
         {
             if (pData[i] == 0)
             {
-                GameManager.instance.inputTrackerBtn[i].GetComponent<Button>().interactable = true;
+//                GameManager.instance.inputTrackerBtn[i].GetComponent<Button>().interactable = true;
             }
             else
             {
-                GameManager.instance.inputTrackerBtn[i].GetComponent<Button>().interactable = false;
+//                GameManager.instance.inputTrackerBtn[i].GetComponent<Button>().interactable = false;
 
             }
         }

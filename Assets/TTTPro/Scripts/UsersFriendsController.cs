@@ -6,7 +6,7 @@ public class UsersFriendsController : MonoBehaviour
 {
 	public static UsersFriendsController Instance;
 
-	public FacebookHandler facebookController;
+//	public FacebookHandler facebookController;
 
 
 	void Awake ()
@@ -17,7 +17,7 @@ public class UsersFriendsController : MonoBehaviour
 	// Use this for initialization
 	public void DisplayUserFriends ()
 	{
-		facebookController.GetFriends ();
+//		facebookController.GetFriends ();
 	}
 	
 

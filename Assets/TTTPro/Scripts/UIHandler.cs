@@ -30,8 +30,15 @@ public class UIHandler : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
-		if (instance == null)
+		if (instance == null) {
 			instance = this;
+			DontDestroyOnLoad(this.gameObject);
+		}
+		else
+		{
+			DestroyImmediate(this.gameObject);
+			return;
+		}
 	}
 	
 	// Update is called once per frame
@@ -42,7 +49,7 @@ public class UIHandler : MonoBehaviour
 
 	public void StartGame ()
 	{
-		gamePlayUI.SetActive (true);
+//		gamePlayUI.SetActive (true);
 		menuUI.SetActive (false);
 		GameManager.instance.GameStart ();
 	}
@@ -72,6 +79,7 @@ public class UIHandler : MonoBehaviour
 
 	public void CreateTable ()
 	{
+		Application.LoadLevel (1);
 		ConnectionManager.Instance.OnSendRequest (requestID);
 	}
 
@@ -92,11 +100,14 @@ public class UIHandler : MonoBehaviour
 	public void AcceptChallange (bool isAcc)
 	{
 		if (isAcc) {
-			UIHandler.instance.gamePlayUI.SetActive (true);
-			UIHandler.instance.menuUI.SetActive (false);
-			UIHandler.instance.loadng.SetActive (false);
-			UIHandler.instance.hud.SetActive (true);
+//			UIHandler.instance.gamePlayUI.SetActive (true);
+			Application.LoadLevel (1);
+
+			menuUI.SetActive (false);
+			loadng.SetActive (false);
+			hud.SetActive (true);
 			frndPic.SetActive (true);
+
 			startGamePlay.transform.parent.gameObject.SetActive (false);
 			addFriendInGamePlay.SetActive (false);
 	
@@ -104,7 +115,9 @@ public class UIHandler : MonoBehaviour
 			requestPanel.SetActive (false);
 			GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
 			GameManager.instance.currState = GameManager.eGameState.play;
+
 			ConnectionManager.Instance.IacceptChallage ();
+
 		}
 	}
 
