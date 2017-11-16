@@ -92,8 +92,13 @@ public class TicTacToe : MonoBehaviour {
 
     void SetMarkerImage(int index)
     {
-		marker.GetComponent<Animator>().enabled = false;
-        marker.GetComponent<Image>().sprite = GameManager.instance.marker[index];
+		if (marker != null) {
+			
+			marker.GetComponent<Animator>().enabled = false;
+			marker.GetComponent<Image>().sprite = GameManager.instance.marker[index];
+			marker.GetComponent<Image> ().color = new Color (1,1,1,1);
+
+		}
     }
 
     public void SetInterable(bool pStatus)
@@ -185,5 +190,19 @@ public class TicTacToe : MonoBehaviour {
         }
         return isInter;
     }
+
+	public void ResetData()
+	{
+		SetMarkerImage (0);
+		marker.GetComponent<Image> ().color = new Color (1,1,1,0);
+		currTTTStatus = eTTTStatus.none;
+		for (int i = 0; i < gridData.Count; i++) {
+			gridData [i] = 0;
+		}
+		for (int i = 0; i < gridData.Count; i++)
+		{
+			grids[i].sprite = GameManager.instance.marker[0];
+		}
+	}
 
 }

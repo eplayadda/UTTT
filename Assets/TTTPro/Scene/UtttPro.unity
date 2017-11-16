@@ -672,6 +672,11 @@ Prefab:
       propertyPath: inputTrackerTi
       value: 
       objectReference: {fileID: 1775448974}
+    - target: {fileID: 114861838208384184, guid: 0fa8dc9f26f716a419a33f0312096cd2,
+        type: 2}
+      propertyPath: gridParent
+      value: 
+      objectReference: {fileID: 1773743395}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fa8dc9f26f716a419a33f0312096cd2, type: 2}
   m_IsPrefabParent: 0
@@ -1208,6 +1213,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224403891170597604, guid: 20a80342008590840857b55c60411ca6,
     type: 2}
   m_PrefabInternal: {fileID: 1965808098}
+--- !u!114 &1773743395 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114847173661640418, guid: 20a80342008590840857b55c60411ca6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1965808098}
+  m_Script: {fileID: 11500000, guid: 3c9402098c03c6441ae781d6b7854b28, type: 3}
 --- !u!224 &1775448973 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224199720473673570, guid: 20a80342008590840857b55c60411ca6,
@@ -1813,6 +1824,14 @@ Prefab:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1552096202100102, guid: 20a80342008590840857b55c60411ca6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217655141281534, guid: 20a80342008590840857b55c60411ca6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381657350097176, guid: 20a80342008590840857b55c60411ca6, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

@@ -22,9 +22,10 @@ public class TTTPlayerManager :MonoBehaviour  {
         if (instace == null)
             instace = this;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void ResetData()
+	{
+		curPlayer = ePlayer.none;
+		count =0;
 	}
 }

@@ -44,5 +44,11 @@ public class GameManager : MonoBehaviour {
     public void GameStart() {
         InputHandler.instance.GameStart();
 	}
+	public void ResetData()
+	{
+		currState = eGameState.none;
+		currTurn = eTurn.one;
+		InputHandler.instance.ResetData ();
+	}
 
 }

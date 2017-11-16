@@ -15,7 +15,8 @@ public class InputHandler : NetworkBehaviour  {
     Vector3 final = Vector3.one;
     public int selectedGrid;
     public int selectedTicTTTgrid;
-    public TicTacToe inputTrackerTi;
+	public TicTacToe inputTrackerTi;
+    public TicTacToe gridParent;
 //    public MyNetworkPlayer myNetworkPlayer;
     public enum eInputType
     {
@@ -189,5 +190,14 @@ public class InputHandler : NetworkBehaviour  {
     {
         
     }
+
+	public void ResetData()
+	{
+		for (int i = 0; i < tictaktoe.Count; i++) {
+			tictaktoe [i].ResetData ();
+		}
+		inputTrackerTi.ResetData ();
+		gridParent.ResetData ();
+	}
    
 }

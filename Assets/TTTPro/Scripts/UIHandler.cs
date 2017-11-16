@@ -70,6 +70,23 @@ public class UIHandler : MonoBehaviour
 		menuUI.SetActive (true);
 	}
 
+	public void MenuPage()
+	{
+		Debug.Log ("Replay");
+		menuUI.SetActive (true);
+		tableInfo.SetActive (false);
+		loadng.SetActive (false);
+		gamePlayUI.SetActive(false);
+		loadng.SetActive(false);
+		requestPanel.SetActive(false);
+		tableInfo.SetActive(false);
+		hud.SetActive (false);
+		gameOverPnl.SetActive (false);
+		startGamePlay.transform.parent.gameObject.SetActive (true);
+		startGamePlay.interactable = false;
+
+	}
+
 	public void CreateTable ()
 	{
 		ConnectionManager.Instance.OnSendRequest (requestID);
@@ -154,7 +171,11 @@ public class UIHandler : MonoBehaviour
 
 	public void Replay()
 	{
-		Application.LoadLevel (0);
+		//Application.LoadLevel (0);
+		myClock.ResetClock();
+		friendClock.ResetClock ();
+		GameManager.instance.ResetData();
+		MenuPage ();
 	}
 
 	public void DeactiveFriendsList ()
