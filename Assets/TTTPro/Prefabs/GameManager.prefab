@@ -52,12 +52,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4931cd938ba9d5f43bd7c6d697ea2b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currGameMode: 0
+  currState: 0
+  currGameMode: 2
   currTurn: 1
   marker:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 59292a52168c4564a955476dff9f3b85, type: 3}
+  - {fileID: 21300000, guid: d3639fb50f8a8454a81fff314abfd307, type: 3}
   inputTrackerBtn:
   - {fileID: 0}
   - {fileID: 0}

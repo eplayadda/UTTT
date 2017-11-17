@@ -65,4 +65,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d768146374106d4ab8fecc8bec76c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facebookController: {fileID: 114184876080473772}

@@ -76,4 +76,5 @@ MonoBehaviour:
   selectedGrid: 0
   selectedTicTTTgrid: 0
   inputTrackerTi: {fileID: 0}
+  gridParent: {fileID: 0}
   currInputType: 0
