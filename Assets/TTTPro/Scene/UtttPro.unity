@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2c2986df9db4948992ead99affff0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentTTT: {fileID: 0}
+  parentTTT: {fileID: 1773743395}
 --- !u!4 &1169246671
 Transform:
   m_ObjectHideFlags: 0

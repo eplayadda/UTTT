@@ -194,10 +194,13 @@ public class TicTacToe : MonoBehaviour {
 	public void ResetData()
 	{
 		SetMarkerImage (0);
-		marker.GetComponent<Image> ().color = new Color (1,1,1,0);
+		if (marker != null) {
+			marker.GetComponent<Image> ().color = new Color (1, 1, 1, 0);
+		}
 		currTTTStatus = eTTTStatus.none;
 		for (int i = 0; i < gridData.Count; i++) {
 			gridData [i] = 0;
+
 		}
 		for (int i = 0; i < gridData.Count; i++)
 		{

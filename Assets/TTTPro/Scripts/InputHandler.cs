@@ -195,6 +195,7 @@ public class InputHandler : NetworkBehaviour  {
 	{
 		for (int i = 0; i < tictaktoe.Count; i++) {
 			tictaktoe [i].ResetData ();
+			tictaktoe[i].GetComponent<Button>().interactable = true;
 		}
 		inputTrackerTi.ResetData ();
 		gridParent.ResetData ();
