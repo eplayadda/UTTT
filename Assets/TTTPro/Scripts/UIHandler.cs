@@ -47,7 +47,7 @@ public class UIHandler : MonoBehaviour
 		GameManager.instance.GameStart ();
 	}
 
-	public void PlayerIDSelecte(int a)
+	public void PlayerIDSelecte (int a)
 	{
 		if (a == 1) {
 			ConnectionManager.Instance.myID = "1";
@@ -70,16 +70,16 @@ public class UIHandler : MonoBehaviour
 		menuUI.SetActive (true);
 	}
 
-	public void MenuPage()
+	public void MenuPage ()
 	{
 		Debug.Log ("Replay");
 		menuUI.SetActive (true);
 		tableInfo.SetActive (false);
 		loadng.SetActive (false);
-		gamePlayUI.SetActive(false);
-		loadng.SetActive(false);
-		requestPanel.SetActive(false);
-		tableInfo.SetActive(false);
+		gamePlayUI.SetActive (false);
+		loadng.SetActive (false);
+		requestPanel.SetActive (false);
+		tableInfo.SetActive (false);
 		hud.SetActive (false);
 		gameOverPnl.SetActive (false);
 		startGamePlay.transform.parent.gameObject.SetActive (true);
@@ -169,12 +169,12 @@ public class UIHandler : MonoBehaviour
 		}
 	}
 
-	public void Replay()
+	public void Replay ()
 	{
 		//Application.LoadLevel (0);
-		myClock.ResetClock();
+		myClock.ResetClock ();
 		friendClock.ResetClock ();
-		GameManager.instance.ResetData();
+		GameManager.instance.ResetData ();
 		MenuPage ();
 	}
 
@@ -185,7 +185,7 @@ public class UIHandler : MonoBehaviour
 
 	public void ActiveFriendsList ()
 	{
-		FriendsList.SetActive (true);
+		//FriendsList.SetActive (true);
 		UsersFriendsController.Instance.DisplayUserFriends ();
 	}
 }

@@ -44,6 +44,7 @@ public class UIManager : MonoBehaviour
 	public void OnClickFrinds ()
 	{
 		uiController.ActiveUIObject (FriendsListPanel);
+		UIHandler.instance.ActiveFriendsList ();
 	}
 
 	public void OnClickSetting ()
@@ -59,6 +60,7 @@ public class UIManager : MonoBehaviour
 	public void OnClickCreateTable ()
 	{
 		uiController.ActiveUIObject (CreateTablePanel);
+		uiController.ActiveUIObject (UIHandler.instance.gamePlayUI);
 		uiController.DeactiveUIObject (CreateGamePlayPanel);
 	}
 
@@ -76,6 +78,7 @@ public class UIManager : MonoBehaviour
 	{
 		Debug.Log ("OnClickInviteFriends");
 		uiController.ActiveUIObject (InviableFriendsPanel);
+		UIHandler.instance.ActiveFriendsList ();
 	}
 
 	public void OnCloseFriendsList ()
