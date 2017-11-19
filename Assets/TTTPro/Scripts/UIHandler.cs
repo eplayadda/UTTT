@@ -84,7 +84,6 @@ public class UIHandler : MonoBehaviour
 		gameOverPnl.SetActive (false);
 		startGamePlay.transform.parent.gameObject.SetActive (true);
 		startGamePlay.interactable = false;
-
 	}
 
 	public void CreateTable ()
@@ -114,14 +113,15 @@ public class UIHandler : MonoBehaviour
 			UIHandler.instance.loadng.SetActive (false);
 			UIHandler.instance.hud.SetActive (true);
 			frndPic.SetActive (true);
-			startGamePlay.transform.parent.gameObject.SetActive (false);
-			addFriendInGamePlay.SetActive (false);
+			//addFriendInGamePlay.SetActive (false);
 	
 			TTTPlayerManager.instace.curPlayer = TTTPlayerManager.ePlayer.two;
 			requestPanel.SetActive (false);
 			GameManager.instance.currGameMode = GameManager.eGameMode.onlineMultiPlayer;
 			GameManager.instance.currState = GameManager.eGameState.play;
 			ConnectionManager.Instance.IacceptChallage ();
+			startGamePlay.transform.parent.gameObject.SetActive (false);
+
 		}
 	}
 
@@ -130,7 +130,7 @@ public class UIHandler : MonoBehaviour
 	{
 		startGamePlay.interactable = true;
 		frndPic.SetActive (true);
-		addFriendInGamePlay.SetActive (false);
+//		addFriendInGamePlay.SetActive (false);
 	}
 
 	public void StartGamePlay ()

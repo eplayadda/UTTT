@@ -65,8 +65,8 @@ public class Clock : MonoBehaviour
 				t += speed * Time.deltaTime;
 				nidle.fillAmount = fillValue;
 //				Debug.Log ("Time :: "+t);
-				if (t >= 1)
-					StartCoroutine ("OnTimeUp");
+//				if (t >= 1)
+//					StartCoroutine ("OnTimeUp");
 			}
 			break;
 		case eClockState.pause:

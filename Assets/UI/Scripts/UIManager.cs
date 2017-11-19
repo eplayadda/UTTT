@@ -62,6 +62,7 @@ public class UIManager : MonoBehaviour
 		uiController.ActiveUIObject (CreateTablePanel);
 		uiController.ActiveUIObject (UIHandler.instance.gamePlayUI);
 		uiController.DeactiveUIObject (CreateGamePlayPanel);
+		UIHandler.instance.CreateTable ();
 	}
 
 	public void OnClickUserProfile ()

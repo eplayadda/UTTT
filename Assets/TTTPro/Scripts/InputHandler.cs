@@ -43,12 +43,12 @@ public class InputHandler : NetworkBehaviour  {
     {
 		if (GameManager.instance.currState != GameManager.eGameState.play)
 			return;
-		Debug.Log ("input");
         if (GameManager.instance.currGameMode == GameManager.eGameMode.onlineMultiPlayer)
         {
 			if (GameManager.instance.currTurn.ToString () == TTTPlayerManager.instace.curPlayer.ToString ()) {
 //                myNetworkPlayer.GridSelected(pGrid);
 //			GridSelected(pGrid);
+				Debug.Log ("input");
 				TTTPlayerManager.instace.count = pGrid;
                 ConnectionManager.Instance.OnInPutDone(pGrid,0);
 				UnetGridSelected (pGrid);
@@ -65,6 +65,8 @@ public class InputHandler : NetworkBehaviour  {
 
     public void UnetGridSelected(int pGrid)
     {
+		Debug.Log ("dfgfdd");
+
         selectedGrid = pGrid;
         inputTracker.gameObject.SetActive(true);
         OpenInputTracker(pGrid);
