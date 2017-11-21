@@ -141,8 +141,10 @@ public class FacebookHandler : MonoBehaviour
 	{
 		ConnectionManager.Instance.friedID = id;
 		Debug.Log ("SetFriendsId : " + id);
-		UIHandler.instance.ShowTableInfo ();
-		UIHandler.instance.DeactiveFriendsList ();
+		//UIHandler.instance.ShowTableInfo ();
+		//UIHandler.instance.DeactiveFriendsList ();
+		UIManager.Instance.OnClickMode();
+		UIManager.Instance.uiController.DeactiveUIObject(UIManager.Instance.FriendsListPanel);
 	}
 
 	public void AppRequest ()
