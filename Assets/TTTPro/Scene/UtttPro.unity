@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2c2986df9db4948992ead99affff0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentTTT: {fileID: 0}
+  parentTTT: {fileID: 1959695288}
 --- !u!4 &1169246671
 Transform:
   m_ObjectHideFlags: 0
@@ -892,6 +892,67 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 706247240}
+    - target: {fileID: 1932576581136650, guid: ad2d392059ff0b049ade31041c434e1b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1556764108018962, guid: ad2d392059ff0b049ade31041c434e1b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301901169670750, guid: ad2d392059ff0b049ade31041c434e1b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1852098927435694, guid: ad2d392059ff0b049ade31041c434e1b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224237028573510528, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -202
+      objectReference: {fileID: 0}
+    - target: {fileID: 224809194410796266, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224491344782440040, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224237028573510528, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224682112542639544, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114597165732172818, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.372
+      objectReference: {fileID: 0}
+    - target: {fileID: 114515765081269664, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.328
+      objectReference: {fileID: 0}
+    - target: {fileID: 114358544568699856, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: currentClockStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114936078879311036, guid: ad2d392059ff0b049ade31041c434e1b,
+        type: 2}
+      propertyPath: currentClockStart
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad2d392059ff0b049ade31041c434e1b, type: 2}
   m_IsPrefabParent: 0
