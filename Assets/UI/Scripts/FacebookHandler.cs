@@ -103,6 +103,7 @@ public class FacebookHandler : MonoBehaviour
 			Button btn = g.GetComponentInChildren<Button> ();
 			Debug.Log (resultValue ["first_name"].ToString () + "  , " + resultValue ["id"].ToString ());
 			string id = resultValue ["id"].ToString ();
+			g.GetComponent<FriendsDetails> ().ID = System.Convert.ToInt64 (id);
 			AddListener (btn, id);
 			if (!string.IsNullOrEmpty (id)) {
 				FB.API ("https" + "://graph.facebook.com/" + id + "/picture?width=128&height=128", HttpMethod.GET, delegate(IGraphResult avatarResult) {
@@ -143,8 +144,8 @@ public class FacebookHandler : MonoBehaviour
 		Debug.Log ("SetFriendsId : " + id);
 		//UIHandler.instance.ShowTableInfo ();
 		//UIHandler.instance.DeactiveFriendsList ();
-		UIManager.Instance.OnClickMode();
-		UIManager.Instance.uiController.DeactiveUIObject(UIManager.Instance.FriendsListPanel);
+		UIManager.Instance.OnClickMode ();
+		UIManager.Instance.uiController.DeactiveUIObject (UIManager.Instance.FriendsListPanel);
 	}
 
 	public void AppRequest ()
